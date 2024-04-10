@@ -2,7 +2,7 @@ public class Palindrome {
 
   public static boolean isPalindrome(String text) {
     // Check against regex for punctuation and spaces
-    text = text.replaceAll("[!? ,]","");
+    text = text.replaceAll("[!?.,-:;*' ]","");
     Stack<Character> backward = new Stack<Character>();
 
     // ? Loop through text, pushes current char to stack -> chars are in reverse order
