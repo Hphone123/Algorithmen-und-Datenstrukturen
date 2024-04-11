@@ -11,7 +11,8 @@ public class JosephusProblem {
 
   private static Queue<String> _solve (String[] persons, Queue<String> elims, int k, int startEl) {
     if (persons.length == 0) return elims;
-    int elimIndex = (k - 1 - startEl) % persons.length;
+    int elimIndex = ((k - 1) % persons.length) + startEl;
+    if (elimIndex >= persons.length) elimIndex -= persons.length; 
     elims.enqueue(persons[elimIndex]);
     String[] _persons = new String[persons.length - 1];
     int j = 0;
@@ -19,19 +20,25 @@ public class JosephusProblem {
       if (i == elimIndex) ++j;
       _persons[i] = persons[i+j];
     }
-
     return _solve(_persons, elims, k, elimIndex);
   }
 
   public static void main(String[] args) {
     String[] input = {
+      "0",
       "1",
       "2",
       "3",
       "4",
       "5",
-      "6"
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
     };
-    System.out.println(solve(input, 4).toString());
+    System.out.println(solve(input, 7).toString());
   }
 }
