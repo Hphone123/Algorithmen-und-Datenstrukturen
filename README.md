@@ -1,7 +1,7 @@
 # AuD Repo
-- This Repo includes all AuD (Algorithmen und Datenstrukturen) assignmends and Ad-Hoc tasks from Summer 2024.
+- This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024.
 
-# Includes working (2 green ticks) assignmends:
+# Includes working (2 green ticks) assignments:
 - [x] Blatt 1
   - [x] Josephus
   - [x] Palindrome
