@@ -1,5 +1,3 @@
-import aud.Stack;
-
 public class TPalindrome {
   // Test if text is a T-palindrome.
   // The input is guaranteed to include only valid characters, i.e.,
@@ -26,14 +24,14 @@ public class TPalindrome {
     }
     
     if (brO == 0 && brC == 0) return isPalindrome(text); // No brackets found, just check left string
-    else if (!isPalindrome(check)) return false; // If Bracket Thing is no Pal, whole string is not
+    else if (!isPalindrome(check)) return false; // If words in brackets are no palindrome, everything is no palindrome
     
     // ?: Replace Bracket Palindrome with '*'
     text = "";
     for (int i = 0; i < __text.length; i++) {
       char c = __text[i];
-      if (i < brO && i > brC) text += c;
-      else if (i == brO) text += '*';
+      if ((i < brO) || (i > brC)) text += c;
+      else if (i == brO) text += "*";
     } 
 
     return isTPalindrome(text);
@@ -59,5 +57,6 @@ public class TPalindrome {
 
   public static void main(String[] args) {
     System.out.println(isTPalindrome("TODO(PENEP)ODOT"));
+    System.out.println(isTPalindrome("BR(non)br"));
   }
 }
