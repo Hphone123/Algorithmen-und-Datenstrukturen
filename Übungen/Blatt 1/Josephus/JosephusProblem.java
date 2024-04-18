@@ -1,3 +1,7 @@
+package Josephus;
+
+import aud.Queue;
+
 public class JosephusProblem {
 
   // Solve the Josephus problem for a list of persons and a number k

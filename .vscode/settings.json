@@ -1,0 +1,17 @@
+{
+   "java.project.sourcePaths": [
+      "Übungen\\Blatt 1",
+      "Übungen\\Blatt 2",
+      "src\\aud24-examples\\src"
+   ],
+   "java.configuration.updateBuildConfiguration": "interactive",
+   "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+   },
+"java.project.referencedLibraries": [
+   "lib/**/*.jar",
+   "${home}\\.m2\\repository/**/*.jar"
+],
+"maven.view": "flat",
+
+}
