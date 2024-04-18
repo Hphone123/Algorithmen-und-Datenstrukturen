@@ -7,6 +7,7 @@
   - [x] Palindrome
   - [x] Tail Recursion
 - [ ] Blatt 2
+  - [x] T-Palindrome
 - [ ] Blatt 3
 - [ ] Blatt 4
 - [ ] Blatt 5

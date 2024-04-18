@@ -1,3 +1,7 @@
+package TPalindrome;
+
+import aud.Stack;
+
 public class TPalindrome {
   // Test if text is a T-palindrome.
   // The input is guaranteed to include only valid characters, i.e.,
@@ -57,6 +61,6 @@ public class TPalindrome {
 
   public static void main(String[] args) {
     System.out.println(isTPalindrome("TODO(PENEP)ODOT"));
-    System.out.println(isTPalindrome("BR(non)br"));
+    System.out.println(isTPalindrome("Palindrome(101)emordnilaP"));
   }
 }
