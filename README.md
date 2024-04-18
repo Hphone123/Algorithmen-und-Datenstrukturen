@@ -8,6 +8,8 @@
   - [x] Tail Recursion
 - [ ] Blatt 2
   - [x] T-Palindrome
+  - [x] Linked Node
+  - [x] IntSList
 - [ ] Blatt 3
 - [ ] Blatt 4
 - [ ] Blatt 5
@@ -20,4 +22,6 @@
 - [ ] Blatt 12
 
 # Includes Ad-Hoc tasks from:
-- [ ]
+
+- [ ] 18.04.2024 (Week 1)
+  - This task was to write a pseudo code algorithm to parse a regular mathematic expression into inverted polish notation.
