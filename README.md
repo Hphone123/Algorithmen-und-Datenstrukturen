@@ -13,6 +13,9 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Palindrome
   - [x] Tail Recursion
 - [ ] Blatt 2
+  - [x] T-Palindrome
+  - [x] Linked Node
+  - [x] IntSList
 - [ ] Blatt 3
 - [ ] Blatt 4
 - [ ] Blatt 5
@@ -25,3 +28,6 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
 - [ ] Blatt 12
 
 ## AdHoc Tasks
+
+- [ ] 18.04.2024 (Week 1)
+  - This task was to write a pseudo code algorithm to parse a regular mathematic expression into inverted polish notation.
