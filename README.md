@@ -1,7 +1,13 @@
-# AuD Repo
+# AuD Documentation
+
 - This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024.
 
-# Includes working (2 green ticks) assignments:
+## Important
+
+The repo tries to import all libraries installed by maven from "${USER}\\.m2\\repository\\". If your maven import path differs, please edit the settings.json to fit your needs.
+
+## Assignments
+
 - [x] Blatt 1
   - [x] Josephus
   - [x] Palindrome
@@ -18,5 +24,4 @@
 - [ ] Blatt 11
 - [ ] Blatt 12
 
-# Includes Ad-Hoc tasks from:
-- [ ]
+## AdHoc Tasks
