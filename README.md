@@ -1,6 +1,6 @@
 # AuD Documentation
 
-- This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024.
+This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024.
 
 ## Important
 
@@ -12,7 +12,7 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Josephus
   - [x] Palindrome
   - [x] Tail Recursion
-- [ ] Blatt 2
+- [x] Blatt 2
   - [x] T-Palindrome
   - [x] Linked Node
   - [x] IntSList
