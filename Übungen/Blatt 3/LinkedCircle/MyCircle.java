@@ -76,6 +76,7 @@ public class MyCircle<T> {
   //-----------------------------------------------------------------//
   // Shouldn't pop return the node?
   public void pop_front() {
+    if (head_ == null) return;
     // If head is only node, pop == set to null
     if (head_.next_ == head_ && head_.prev_ == head_) head_ = null;
     head_.next_.prev_ = head_.prev_;
