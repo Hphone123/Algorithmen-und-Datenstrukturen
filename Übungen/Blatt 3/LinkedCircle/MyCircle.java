@@ -78,7 +78,7 @@ public class MyCircle<T> {
   public void pop_front() {
     if (head_ == null) return;
     // If head is only node, pop == set to null
-    if (head_.next_ == head_ && head_.prev_ == head_) head_ = null;
+    if (head_.next_ == head_ && head_.prev_ == head_) {head_ = null;return;}
     head_.next_.prev_ = head_.prev_;
     head_.prev_.next_ = head_.next_;
     // Should head be moved to the next element on hte front or back???
@@ -97,6 +97,7 @@ public class MyCircle<T> {
 
     System.out.println(circle.toString());
 
+    circle.pop_front();
     circle.pop_front();
     circle.pop_front();
 
