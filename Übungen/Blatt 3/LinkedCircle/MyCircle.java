@@ -40,26 +40,67 @@ public class MyCircle<T> {
   //-----------------------------------------------------------------//
   //---------------- !!Insert your solution below!! -----------------//
   public int size() {
-    // TODO: return the size of the ring buffer
+    if (head_ == null) return 0;
+    int i = 1;
+
+    Node head = head_;
+    Node curr = head_.next_;
+    
+    while (curr != head) {
+      curr = curr.next_;
+      i++;
+    }
+    return i;
   }
 
   //-----------------------------------------------------------------//
   public boolean empty() {
-    // TODO: return if the ring buffer is empty
+    if (head_ == null) return true;
+    return false;
   }
 
   //-----------------------------------------------------------------//
   public void push_back(T obj) {
-    // TODO: append an element at the 'end' of the end buffer
+    if (head_ == null) {
+      Node head = new Node(obj, null, null);
+      head.prev_ = head;
+      head.next_ = head;
+      head_ = head;
+    } else {
+      Node back = new Node(obj, head_.prev_, head_);
+      head_.prev_.next_ = back;
+      head_.prev_ = back;
+    }
   }
 
   //-----------------------------------------------------------------//
+  // Shouldn't pop return the node?
   public void pop_front() {
-    // TODO: remove an element at the 'front' if the ring buffer
+    // If head is only node, pop == set to null
+    if (head_.next_ == head_ && head_.prev_ == head_) head_ = null;
+    head_.next_.prev_ = head_.prev_;
+    head_.prev_.next_ = head_.next_;
+    // Should head be moved to the next element on hte front or back???
+    head_ = head_.next_;
   }
 
   //-----------------------------------------------------------------//
   public static void main(String[] args) {
-    // TODO: test your code with appropriate examples
+    MyCircle<Integer> circle = new MyCircle<Integer>();
+    circle.push_back(1);
+    circle.push_back(2);
+    circle.push_back(3);
+    circle.push_back(4);
+    circle.push_back(5);
+    circle.push_back(6);
+
+    System.out.println(circle.toString());
+
+    circle.pop_front();
+    circle.pop_front();
+
+    System.out.println(circle.toString());
+    System.out.println(circle.size());
+    System.out.println(circle.empty());
   }
 }
