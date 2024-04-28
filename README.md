@@ -16,7 +16,10 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] T-Palindrome
   - [x] Linked Node
   - [x] IntSList
-- [ ] Blatt 3
+- [x] Blatt 3
+  - [x] LinkedCircle
+  - [x] MyDList
+  - [x] MySList (SList Iterator)
 - [ ] Blatt 4
 - [ ] Blatt 5
 - [ ] Blatt 6
