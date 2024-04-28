@@ -35,15 +35,19 @@ public class MySList implements Iterable<Integer> {
   //----------------------------------------------------------------//
   public MySList(int objects []) {
     for (int i : objects) {
-      pushBack(i);
+      push_back(i);
     }
+  }
+
+  public MySList () {
+    // This is just here so Rössl's test system doesnt brake
   }
 
   public boolean empty () {
     return (head_ == null && tail_ == null);
   }
 
-  public void pushBack (int obj) {
+  public void push_back (int obj) {
     Node node = new Node();
     node.data_ = obj;
     node.next_ = null;
@@ -102,8 +106,8 @@ public class MySList implements Iterable<Integer> {
     System.out.println(list.toString());
     System.out.println(list.empty());
     
-    list.pushBack(27);
-    list.pushBack(89);
+    list.push_back(27);
+    list.push_back(89);
     
     for (Integer integer : list) {
       System.out.println(integer);
