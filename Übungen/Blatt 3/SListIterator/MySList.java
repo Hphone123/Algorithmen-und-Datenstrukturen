@@ -47,7 +47,7 @@ public class MySList implements Iterable<Integer> {
     return (head_ == null && tail_ == null);
   }
 
-  public void push_back (int obj) {
+  public final void push_back (int obj) {
     Node node = new Node();
     node.data_ = obj;
     node.next_ = null;
