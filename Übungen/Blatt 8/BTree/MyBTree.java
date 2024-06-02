@@ -16,7 +16,7 @@ public class MyBTree<T extends Comparable<T>> extends BTree<T> {
 
    public void insertAndViewArray(T [] __data) {
       DotViewer viewer = DotViewer.displayWindow(this, "MyBTree");
-      viewer.help();
+      DotViewer.help();
       for (int i = 0; i < __data.length; i++) {
          this.insert(__data[i]);
          viewer.display(this);
@@ -46,7 +46,7 @@ public class MyBTree<T extends Comparable<T>> extends BTree<T> {
 
    public static void main(String [] args) {
 
-      MyBTree<Integer> tree = new MyBTree(2);
+      MyBTree<Integer> tree = new MyBTree<Integer>(2);
 
       tree.insertAndViewArray(new Integer[]{6, 18, 22, 3, 11, 16, 7, 10, 1, 8, 12});
 
