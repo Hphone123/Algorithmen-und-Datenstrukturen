@@ -1,0 +1,232 @@
+[33mcommit 41d61941217091b5496ea699cfb6259c0ebeebee[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31mGitHub/main[m[33m)[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Sun Apr 28 13:54:07 2024 +0200
+
+    update README
+
+[33mcommit 81ecdeb41774269946dae6e604e81b934d6b8fb9[m
+Merge: c32d77b 023cf0b
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Sun Apr 28 13:52:54 2024 +0200
+
+    Merge branch 'exc/Blatt3'
+
+[33mcommit 023cf0bfc05cacf8883088437747a3a90a28342d[m[33m ([m[1;31mGitHub/exc/Blatt3[m[33m, [m[1;32mexc/Blatt3[m[33m)[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Sun Apr 28 13:52:18 2024 +0200
+
+    Change push_back to be final, fixes 'this-escape warning'
+
+[33mcommit 96fab1a9ec3a4a31e4058c002013ac94d6bab323[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Sun Apr 28 13:49:46 2024 +0200
+
+    Add empty constructor
+    Change pushBack to push_back
+
+[33mcommit 0f75090f808d99cce1444b6f77c275c82f4c47a5[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Sun Apr 28 13:46:39 2024 +0200
+
+    MySList finish
+    
+    Might need changes, task was ambigious
+
+[33mcommit 5de06743dd0d2e0bfc058277d87c4f0cb07a13c0[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Fri Apr 26 22:00:36 2024 +0200
+
+    MyCircle - nullPointer fix the 2nd
+
+[33mcommit 8439deeb6d0282b353824a345909aac8c1006d17[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Fri Apr 26 21:57:05 2024 +0200
+
+    MyCircle - nullPointer pop_front fix
+
+[33mcommit 8ef6e3cff9d2901318d263faf8b44a7b3b098567[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Fri Apr 26 21:54:55 2024 +0200
+
+    MyCircle finish
+
+[33mcommit 51c7c2b020b8a74961aa52b31c521f7483b285da[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Fri Apr 26 21:29:01 2024 +0200
+
+    MyDList finish
+
+[33mcommit 0c804e5afd4710e525f3d248f84893ae0bebacf2[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Tue Apr 23 10:23:29 2024 +0200
+
+    Blatt 3 init
+
+[33mcommit c32d77b73fb8533254e5bf1689544bb3b9aca92a[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 14:36:36 2024 +0200
+
+    README fix
+
+[33mcommit 7bc58b033c720a8e85653223b081cd6c01539456[m
+Merge: 05289ef b6217a9
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 14:33:38 2024 +0200
+
+    Merge branch 'exc/Blatt2'
+
+[33mcommit b6217a9b09afda566dd738afacab93bcf203e840[m[33m ([m[1;31mGitHub/exc/Blatt2[m[33m, [m[1;32mexc/Blatt2[m[33m)[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 14:29:46 2024 +0200
+
+    LinkedNode finish, IntSList finish, README update
+
+[33mcommit 05289efe0907240dc29e22d51aeb2a7b316c388c[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 12:18:08 2024 +0200
+
+    README update
+    
+    Update Readme to reflect changes in structure
+
+[33mcommit 459e5eb9b44e4c0e0e5fda386e371d244b060b51[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 12:06:39 2024 +0200
+
+    TPalindrome Refactor
+    
+    Refactore of TPalindrome to work with new Repo structure
+
+[33mcommit ce384ab112b96d845089d86b21e1ddcf95d5e002[m
+Merge: 68a6cbd 86df345
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 12:04:47 2024 +0200
+
+    Merge branch 'exc/Blatt2' of github.com:Hphone123/Algorithmen-und-Datenstrukturen into exc/Blatt2
+
+[33mcommit 68a6cbdbd2c4267f1609660cb06dde881d3aacde[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 12:04:17 2024 +0200
+
+    TPalindrome finish
+    
+    TPal debug finish
+    Bodge solution for import garbage
+
+[33mcommit 26d2285bdf75bc20bc60efbfd16a9264b0415f06[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 12:04:17 2024 +0200
+
+    TPalindrfome implemented
+    
+    implementation finished, compiler not cooperating
+
+[33mcommit d332bb063343588ace691d06ddda2432359a75c4[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 18 12:03:48 2024 +0200
+
+    Repo Refactor
+    
+    Refactor to make import more easy
+    Include maven oroject for import
+    Refactor of Blatt 1 to import from aud-package
+    Add package for all excercise
+    Add batik library
+
+[33mcommit 86df34511286d17fc28a4d14628c5db5f15a8768[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Tue Apr 16 15:36:49 2024 +0200
+
+    TPalindrome finish
+    
+    TPal debug finish
+    Bodge solution for import garbage
+
+[33mcommit 491b637dce080b1e93cabe95cf27366854c07f7f[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Tue Apr 16 14:41:50 2024 +0200
+
+    TPalindrfome implemented
+    
+    implementation finished, compiler not cooperating
+
+[33mcommit 3534c7036e55ef0d27a77604bc1dae713972ab5a[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Tue Apr 16 13:35:49 2024 +0200
+
+    Rössl src submodule add
+
+[33mcommit bcabe0fd54d3ce93f2a76f7abdb115f4765cff5a[m
+Author: Hphone123 <157851134+Hphone123@users.noreply.github.com>
+Date:   Thu Apr 11 11:55:02 2024 +0200
+
+    README update
+    
+    ("assignment" is spelled with 't')
+
+[33mcommit 3245c8405f509deeb92423addc845105337ab36c[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 11 11:19:29 2024 +0200
+
+    README Update
+
+[33mcommit fec948c2114e168a6bd887069e7138ef97a98be9[m
+Merge: 3ae9e94 1026ceb
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 11 09:43:12 2024 +0200
+
+    Merge commit '1026ceba5dbfc6805ad1bce1a43e2178a928737b'
+
+[33mcommit 1026ceba5dbfc6805ad1bce1a43e2178a928737b[m[33m ([m[1;31mGitHub/exc/Blatt1[m[33m, [m[1;32mexc/Blatt1[m[33m)[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Thu Apr 11 09:42:05 2024 +0200
+
+    Josephus finish
+    
+    Add all Punctuation to Java
+    Finish assignmend 3 in md
+
+[33mcommit 433ead10dc1155de44b2dc6d30e799693f29857c[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Wed Apr 10 19:38:00 2024 +0200
+
+    Josephus partial finish
+    
+    Josephus.java finished, self test
+    josephus.md begun
+
+[33mcommit 170806605de20482bed89eebde08bf799d940363[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Wed Apr 10 18:50:24 2024 +0200
+
+    Palindrome - Regex Fix
+
+[33mcommit e891a10afad21456f8418ce51d616a6bf89599f9[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Wed Apr 10 16:25:05 2024 +0200
+
+    Palindrome finish
+    
+    Add self tested palindrome.java
+
+[33mcommit 96bd40d7d0143f13aef6660f3ba6ba7bb7674256[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Wed Apr 10 12:32:42 2024 +0200
+
+    Tail recursion
+    
+    Self tested TailRecursion working
+
+[33mcommit 5adbe55898fa9b24b00a0697fae4fd178cf4ec9b[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Wed Apr 10 11:53:37 2024 +0200
+
+    Blatt 1 init
+    
+    Add all files
+
+[33mcommit 3ae9e94fc79866bb58fd2d814dea68124bbba6d0[m
+Author: Hannes Krüger <kruegerh@kd-elektroniksysteme.de>
+Date:   Wed Apr 10 11:48:54 2024 +0200
+
+    initial commit
