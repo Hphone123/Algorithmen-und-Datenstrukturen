@@ -1,6 +1,6 @@
 # AuD Documentation
 
-This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024.
+This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024 at the Otto-von-Guericke-Universität (OvGU) Magdeburg.
 
 ## Important
 
@@ -34,3 +34,5 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
 
 - [ ] 18.04.2024 (Week 1)
   - This task was to write a pseudo code algorithm to parse a regular mathematic expression into inverted polish notation.
+- [x] 02.05.2024 (Week 2)
+- [ ] 02.05.2024 (Week 3)
