@@ -1,10 +1,10 @@
 {
    "java.project.sourcePaths": [
+      "Übungen/Blatt 3",
       "Übungen/Blatt 2",
       "Übungen/Blatt 1",
-      "Übungen/Blatt 3",
-      "Übungen/Blatt 8",
-      "src/aud24-examples/src"
+      "src/aud24-examples/src",
+      "Übungen/Blatt 8"
    ],
    "java.configuration.updateBuildConfiguration": "interactive",
    "editor.codeActionsOnSave": {
