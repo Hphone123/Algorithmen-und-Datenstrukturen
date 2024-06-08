@@ -10,8 +10,6 @@ public class HashLinQuad {
   private int size_;       // current number of elements
   private int capacity_;
 
-  // TODO: Constructor
-
   public HashLinQuad(int __size) {
     table_ = new int[__size];
     size_ = 0;
@@ -42,7 +40,7 @@ public class HashLinQuad {
   public int addQuad(int obj) {
     int col = 0; //? Colisions
 
-    int hash = Math.floorMod(obj, capacity_); //? Hash function -> ceiling(obj/size_)
+    int hash = Math.floorMod(obj, capacity_); //? Hash function -> ceiling(obj % capacity_)
     int i = 0;
     while (table_[hash] != -1) {
       hash = Math.floorMod(obj + i^2, capacity_);
@@ -69,18 +67,18 @@ public class HashLinQuad {
 
   //---------------------------------------------------------------//
   public static void main(String[] args) {
-    HashLinQuad hashTaLin = new HashLinQuad(1249);
+    HashLinQuad hashTaLin = new HashLinQuad(11);
     int linCol = 0;
-    for (int i = 0; i < 1000; i++) {
-      linCol += hashTaLin.addLin((int)(Math.random() * 1000));
+    for (int i = 0; i < 11; i++) {
+      linCol += hashTaLin.addLin((int)(Math.random() * 11));
     }
     System.out.println("Collisions with linear probing: " + linCol);
     System.out.println(hashTaLin.toString());
   
-    HashLinQuad hashTaQuad = new HashLinQuad(1249);
+    HashLinQuad hashTaQuad = new HashLinQuad(11);
     int quadCol = 0;
-    for (int i = 0; i < 1000; i++) {
-      quadCol += hashTaQuad.addLin((int)(Math.random() * 1000));
+    for (int i = 0; i < 11; i++) {
+      quadCol += hashTaQuad.addLin((int)(Math.random() * 11));
     }
     System.out.println("Collisions with quadratic probing: " + quadCol);
     System.out.println(hashTaQuad.toString());
