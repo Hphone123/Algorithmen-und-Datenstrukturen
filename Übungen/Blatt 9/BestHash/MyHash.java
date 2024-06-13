@@ -20,8 +20,24 @@ public class MyHash {
 
   //-------------------------------------------------------------//
   public void insert(String s) {
-    // TODO: implementation
-    // work with return-value from BucketArray-insert
+    int hash = createHash(s);
+    int index = Math.floorMod(hash, size_);
+
+    int i = 0;
+    while (!e_.insert(index, s)) {
+      index = Math.floorMod(hash + ++i^2, size_);
+    }
+  }
+
+  private int createHash (String __s) {
+    int hash = 0;
+    for (int i = 0; i < __s.length(); i++) {
+      hash += (__s.charAt(i) - 60) * (i+1);
+    }
+
+    //? Hash is the Value of each character, weight by how far they are in the String to make the hash as "unique" to any string as possible
+
+    return hash;
   }
 
   //-------------------------------------------------------------//
@@ -30,7 +46,7 @@ public class MyHash {
     int size = 1249;  // only an example (backend test)
     MyHash hash = new MyHash(size);
     try {
-      DataInput s = new DataInputStream(new FileInputStream("ww1.txt"));
+      DataInput s = new DataInputStream(new FileInputStream("C:\\Workspace\\Java\\AuD\\Übungen\\Blatt 9\\BestHash\\ww1.txt"));
       // use correct Path
       String line;
       while ((line = s.readLine()) != null) {
