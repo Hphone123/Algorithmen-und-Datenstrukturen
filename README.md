@@ -33,6 +33,9 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Food Hashes
   - [x] BestHash / MyHash
 - [ ] Blatt 10
+  - [ ] Graphs
+  - [ ] Adjacense Matrix
+  - [ ] Wide- / Deep-Search
 - [ ] Blatt 11
 - [ ] Blatt 12
 
