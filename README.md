@@ -28,7 +28,10 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] MyBTree
   - [x] Heap Theorie
   - [x] Max Heap
-- [ ] Blatt 9
+- [x] Blatt 9
+  - [x] HashLinQuad
+  - [x] Food Hashes
+  - [x] BestHash / MyHash
 - [ ] Blatt 10
 - [ ] Blatt 11
 - [ ] Blatt 12
