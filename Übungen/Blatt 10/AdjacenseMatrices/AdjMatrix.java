@@ -46,11 +46,33 @@ public class AdjMatrix{
 
   //-------------------------------------------------------------//
   public static boolean hasTriangle(int[][] m) {
-    //TODO: implement
+    //! We assume m is a quadratic Matrix, should be checked
+    for (int i = 0; i < m.length; i++) {
+      for (int j = 0; j < m.length; j++) {
+        if (m[i][j] > 0) {
+          for (int j2 = 0; j2 < m.length; j2++) {
+            if ((m[j][j2] > 0) && (m[j2][i] > 0)) return true;
+          }
+        }
+      }
+    }
+    return false;
   }
 
   //-------------------------------------------------------------//
   public static void main(String args[]) {
-    //TODO: test your code
+    int [][] triangleMatrix = {
+      {0, 1, 0},
+      {0, 0, 1},
+      {1, 0, 0}
+    };
+    int [][] noTriangleMatrix = {
+      {0, 1, 0},
+      {0, 0, 1},
+      {0, 1, 0}
+    };
+
+    System.out.println(hasTriangle(triangleMatrix));
+    System.out.println(hasTriangle(noTriangleMatrix));
   }
 }
