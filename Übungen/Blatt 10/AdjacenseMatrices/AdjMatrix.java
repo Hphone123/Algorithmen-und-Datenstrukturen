@@ -100,6 +100,6 @@ public class AdjMatrix{
     System.out.println("OutDegree for Node 0                         : " + outDegree(0, taskDMatrix));
     System.out.println("InDegree for Node 2                          : " + inDegree(2, taskDMatrix));
     System.out.println("Nodes adjacent to  2                         : " + adjacent(2, taskDMatrix).toString());
-    System.out.println("Triangle                                     : " + hasTriangle(taskDMatrix));
+    System.out.println("Has a triangle                               : " + hasTriangle(taskDMatrix));
   }
 }
