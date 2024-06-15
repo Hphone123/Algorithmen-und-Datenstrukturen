@@ -7,8 +7,8 @@ import java.util.List;
  *  0 0 0
  *  0 1 0
  *  1 0 0 <- Ausgehnde Kanten für Knoten 3 (Zeile 3) 
- *      /\
- *       |-- Eingehnde Kanten für Knoten 3 (Spalte 3)
+ *      ^
+ *      |-- Eingehnde Kanten für Knoten 3 (Spalte 3)
  */     
 
 //---------------------------------------------------------------//
@@ -18,7 +18,7 @@ public class AdjMatrix{
     //! We assume m is a quadratic Matrix, should be checked
     int sum = 0;
     for (int i = 0; i < m.length; i++) {
-      if (m[i][k] > 1) ++sum;
+      if (m[i][k] > 0) sum++;
     }
     return sum;
   }
@@ -27,8 +27,8 @@ public class AdjMatrix{
   public  static int outDegree(int k, int[][] m) {
     //! We assume m is a quadratic Matrix, should be checked
     int sum = 0;
-    for (int i = 0; i < m[k].length; i++) {
-      if (m[k][i] > 1) ++sum;
+    for (int i = 0; i < m.length; i++) {
+      if (m[k][i] > 0) sum++;
     }
     return sum;
   }
@@ -38,8 +38,8 @@ public class AdjMatrix{
     List<Integer> nodes = new ArrayList<Integer>();
     //! We assume m is a quadratic Matrix, should be checked
     for (int i = 0; i < m.length; i++) {
-      if (m[k][i] > 1) nodes.add(m[k][i]);
-      if (m[i][k] > 1) nodes.add(m[i][k]);
+      if (m[k][i] > 0) nodes.add(i);
+      else if (m[i][k] > 0) nodes.add(i);
     }
     return nodes;
   }
@@ -71,8 +71,35 @@ public class AdjMatrix{
       {0, 0, 1},
       {0, 1, 0}
     };
+    System.out.println("\nTest Matricies\n--------------");
+    System.out.println("This Matrix has a triangle (should be true)  : " + hasTriangle(triangleMatrix));
+    System.out.println("This Matrix has no triangle (should be false): " + hasTriangle(noTriangleMatrix));
 
-    System.out.println(hasTriangle(triangleMatrix));
-    System.out.println(hasTriangle(noTriangleMatrix));
+    int [][] taskDMatrix = {
+      {0, 1, 0, 0, 1},
+      {0, 0, 0, 1, 0},
+      {0, 1, 0, 0, 0},
+      {0, 0, 1, 0, 0},
+      {0, 0, 0, 1, 0}
+    };
+
+    /* Triangle in this Matrix:
+     * 4 - 3 - 2
+     */
+
+    int [][] fourLongChainTest = {
+      {0, 0, 0, 0, 0},
+      {0, 0, 0, 0, 1},
+      {0, 1, 0, 0, 0},
+      {0, 0, 1, 0, 0},
+      {0, 0, 0, 1, 0}
+    };
+
+    System.out.println("This Matrix has a 'square' (should be false) : " + hasTriangle(fourLongChainTest));
+    System.out.println("\nGiven Matrix\n------------");
+    System.out.println("OutDegree for Node 0                         : " + outDegree(0, taskDMatrix));
+    System.out.println("InDegree for Node 2                          : " + inDegree(2, taskDMatrix));
+    System.out.println("Nodes adjacent to  2                         : " + adjacent(2, taskDMatrix).toString());
+    System.out.println("Triangle                                     : " + hasTriangle(taskDMatrix));
   }
 }
