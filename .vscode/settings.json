@@ -5,7 +5,7 @@
       "Übungen/Blatt 2",
       "Übungen/Blatt 1",
       "src/aud24-examples/src",
-      "Programmierwettbewerb"
+      "Programmierwettbewerb/bots"
    ],
    "java.configuration.updateBuildConfiguration": "interactive",
    "editor.codeActionsOnSave": {
@@ -13,7 +13,8 @@
    },
 "java.project.referencedLibraries": [
    "lib/**/*.jar",
-   "${home}\\.m2\\repository/**/*.jar"
+   "${home}\\.m2\\repository/**/*.jar",
+   "Programmierwettbewerb/*.jar"
 ],
 "maven.view": "flat",
 

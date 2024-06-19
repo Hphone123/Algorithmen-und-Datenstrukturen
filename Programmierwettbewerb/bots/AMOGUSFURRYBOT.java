@@ -1,5 +1,3 @@
-package bots;
-
 import com.gatdsen.manager.Controller;
 import com.gatdsen.manager.StaticGameState;
 import com.gatdsen.manager.player.Bot;
