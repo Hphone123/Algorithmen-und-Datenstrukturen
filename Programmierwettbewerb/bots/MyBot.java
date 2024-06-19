@@ -12,7 +12,7 @@ import com.gatdsen.simulation.Tile;
 import com.gatdsen.simulation.Tile.TileType;
 import com.gatdsen.simulation.Tower.TowerType;
 
-public class AMOGUSFURRYBOT extends Bot {
+public class MyBot extends Bot {
     
     public class internalTower {
         int _x; int _y;
@@ -117,3 +117,4 @@ public class AMOGUSFURRYBOT extends Bot {
 
     }
 }
+
