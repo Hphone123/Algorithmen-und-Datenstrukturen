@@ -1,10 +1,11 @@
 {
    "java.project.sourcePaths": [
+      "Übungen/Blatt 8",
       "Übungen/Blatt 3",
       "Übungen/Blatt 2",
       "Übungen/Blatt 1",
       "src/aud24-examples/src",
-      "Übungen/Blatt 8"
+      "Programmierwettbewerb/bots"
    ],
    "java.configuration.updateBuildConfiguration": "interactive",
    "editor.codeActionsOnSave": {
@@ -12,7 +13,8 @@
    },
 "java.project.referencedLibraries": [
    "lib/**/*.jar",
-   "${home}\\.m2\\repository/**/*.jar"
+   "${home}\\.m2\\repository/**/*.jar",
+   "Programmierwettbewerb/*.jar"
 ],
 "maven.view": "flat",
 
