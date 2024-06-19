@@ -45,3 +45,8 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - This task was to write a pseudo code algorithm to parse a regular mathematic expression into inverted polish notation.
 - [x] 02.05.2024 (Week 2)
 - [ ] 02.05.2024 (Week 3)
+
+## Prgramming Competition
+
+- [x] gaTDsen Tower-Defense Bot
+  - This Bot works by placing Towers along x = 5, and then upgrading them one after another, whilst sending as many EMP-Cats as possible. Tested on gaTDsen Version 2.1.1
