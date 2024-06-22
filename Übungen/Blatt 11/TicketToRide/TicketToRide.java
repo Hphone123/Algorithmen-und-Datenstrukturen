@@ -1,20 +1,92 @@
 package TicketToRide;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class TicketToRide {
   //@formatter:off
   private Matrix adjacencyMatrix = null;
   Matrix getAdjacencyMatrix() { return adjacencyMatrix; }
+
+  private class Node {
+    int id;
+    String name;
+
+    private Node (int __id, String __name) {
+      id = __id;
+      name = __name;
+    }
+  }
+
+  private class Edge {
+    int bgn, end;
+    String bgnName, endName;
+    int weight;
+
+    private Edge (int __bgn, int __end, String __bgnNm, String __endNm, int __wght) {
+      bgn = __bgn; end = __end;
+      bgnName = __bgnNm; endName = __endNm;
+      weight = __wght;
+    }
+  }
+
+  private List<Node> nodes;
+  private List<Edge> edges;
   //@formatter:on
 
   // --------------------------------------------------------------- //
-  // ToDo: add more variables if you need them
+  public TicketToRide () {
+    nodes = new ArrayList<Node>();
+    edges = new ArrayList<Edge>();
 
-  // --------------------------------------------------------------- //
-  /** Constructor creates all necessary data. */
-  public TicketToRide() {
-    // ToDo: implement the constructor
+    // Read files and fill in Nodes and Edges
+    BufferedReader reader;
+		try {
+
+      // Cities / Nodes
+			reader = new BufferedReader(new FileReader("C:\\Workspace\\Java\\AuD\\Übungen\\Blatt 11\\TicketToRide\\cities.data")); reader.readLine(); String line = reader.readLine();  // The first line msut be discarded
+			while (line != null) {
+        String [] city = line.split(" +"); //? One or more Spaces match this expression
+        for (int i = 2; i < city.length; i++) {
+          city[1] += " " + city[i];
+        } 
+        Node cityNode = new Node(Integer.valueOf(city[0]), city[1]); //! Here should be a try-catch for safety, but were sury (for these files) that the first split value is a number!
+				nodes.add(cityNode);
+
+        line = reader.readLine();
+			}
+			reader.close();
+
+      // Connections / Edges
+      reader = new BufferedReader(new FileReader("C:\\Workspace\\Java\\AuD\\Übungen\\Blatt 11\\TicketToRide\\connections.data")); reader.readLine(); line = reader.readLine();
+			while (line != null) {
+        String [] connection = line.split(", +"); //? Comma and one or more spaces match this expression
+        Edge connectionEdge = new Edge(0, 0, connection[1], connection[2], Integer.valueOf(connection[0])); //! Here should be a try-catch for safety, but were sury (for these files) that the first split value is a number!
+				edges.add(connectionEdge);
+
+				line = reader.readLine();
+			}
+
+      reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+    // Fill in id's
+    for (Edge edge : edges) {
+      for (Node node : nodes) {
+        if (node.name.equals(edge.bgnName)) edge.bgn = node.id;
+        if (node.name.equals(edge.endName)) edge.end = node.id;
+      }
+    }
+
+    // Create empty AdjMatr.
+    adjacencyMatrix = new Matrix(nodes.size());
+
   }
 
   // --------------------------------------------------------------- //
@@ -23,7 +95,10 @@ public class TicketToRide {
    * provided.
    */
   public int cityToIndex(String city) {
-    // ToDo: implement this method
+    for (Node node : nodes) {
+      if (node.name.equals(city)) return node.id;
+    }
+    return -1;
   }
 
   // --------------------------------------------------------------- //
@@ -32,7 +107,10 @@ public class TicketToRide {
    * is wrong.
    */
   public String indexToCity(int index) {
-    // ToDo: implement this method
+    for (Node node : nodes) {
+      if (node.id == index) return node.name;
+    }
+    return null;
   }
 
   // --------------------------------------------------------------- //
@@ -41,7 +119,12 @@ public class TicketToRide {
    * the matrix correspond to the length of the connection.
    */
   final public void createAdjacencyMatrix() {
-    // ToDo: implement this method
+    int [][] tempMtrx = new int[nodes.size()][nodes.size()];
+    for (Edge edge : edges) {
+      tempMtrx[edge.bgn][edge.end] = edge.weight;
+      tempMtrx[edge.end][edge.bgn] = edge.weight;
+    }
+    adjacencyMatrix = new Matrix(tempMtrx);
   }
 
   // --------------------------------------------------------------- //
@@ -49,7 +132,21 @@ public class TicketToRide {
    * Computes the number of cycles with the given length for the specified city.
    */
   public int getCyclesCount(String city, int length) {
-    // ToDo: implement this method
+    int cityIdx = cityToIndex(city);
+
+    // Set all Non-Zero elements to 1
+    Matrix adjCopy = new Matrix(adjacencyMatrix);
+    for (int i = 0; i < nodes.size(); i++) {
+      for (int j = 0; j < nodes.size(); j++) {
+        if (adjacencyMatrix.get(i, j) > 0) adjCopy.set(i, j, 1);
+      }
+    }
+    // Multiply by itself length-times -> Number on diagonal is cycle count
+    Matrix cycles = new Matrix(adjCopy);
+    for (int i = 1; i < length; i++) {
+      cycles = cycles.times(adjCopy);
+    }
+    return cycles.get(cityIdx, cityIdx);
   }
 
   // --------------------------------------------------------------- //
@@ -57,7 +154,23 @@ public class TicketToRide {
    * Computes the total number of all cycles with the given length.
    */
   public int getTotalCyclesCount(int length) {
-    // ToDo: implement this method
+    // Set all Non-Zero elements to 1
+    Matrix adjCopy = new Matrix(adjacencyMatrix);
+    for (int i = 0; i < nodes.size(); i++) {
+      for (int j = 0; j < nodes.size(); j++) {
+        if (adjacencyMatrix.get(i, j) > 0) adjCopy.set(i, j, 1);
+      }
+    }
+    // Multiply by itself length-times -> Number on diagonal is cycle count
+    Matrix cycles = new Matrix(adjCopy);
+    for (int i = 1; i < length; i++) {
+      cycles = cycles.times(adjCopy);
+    }
+    int res = 0;
+    for (int i = 0; i < nodes.size(); i++) {
+      res += cycles.get(i, i);
+    }
+    return res;
   }
 
   // --------------------------------------------------------------- //
@@ -65,7 +178,13 @@ public class TicketToRide {
    * Return a list with the cities, that are connected to the input city.
    */
   public List<String> getConnections(String city) {
-    // ToDo: implement this method
+    List<String> list = new ArrayList<String>();
+
+    for (Edge edge : edges) {
+      if (edge.bgnName.equals(city)) list.add(edge.endName);
+      if (edge.endName.equals(city)) list.add(edge.bgnName);
+    }
+    return list;
   }
 
   // --------------------------------------------------------------- //
@@ -74,7 +193,14 @@ public class TicketToRide {
    * there is no connection.
    */
   public int getConnectionLength(String cityA, String cityB) {
-    // ToDo: implement this method
+    for (Edge edge : edges) {
+      if (edge.bgnName.equals(cityB) &&
+          edge.endName.equals(cityA)
+          ||
+          edge.bgnName.equals(cityA) &&
+          edge.endName.equals(cityB)) return edge.weight;
+    }
+    return 0;
   }
 
   // --------------------------------------------------------------- //
@@ -83,6 +209,16 @@ public class TicketToRide {
    * cityA and cityB. The path is determined by depth-first-search'.
    */
   public List<String> getPath(String cityA, String cityB) {
-    // ToDo: implement this method
+    return null; //? This is here so I can test my Methods
+  }
+
+  public static void main (String [] args) {
+    TicketToRide ttr = new TicketToRide();
+
+    ttr.createAdjacencyMatrix();
+    System.out.println(ttr.cityToIndex("Atlanta"));
+    System.out.println(ttr.indexToCity(13));
+    System.out.println(ttr.getCyclesCount("Boston", 5));
+    System.out.println(ttr.getTotalCyclesCount(6));
   }
 }
