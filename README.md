@@ -36,7 +36,11 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Graphs
   - [x] Adjacense Matrix
   - [x] Wide- / Deep-Search
-- [ ] Blatt 11
+- [x] Blatt 11
+  - [x] Topology
+  - [x] Dijkstra-Algorithm
+  - [x] Prim-MST-Algorithm
+  - [x] Ticket to Ride (optional task)
 - [ ] Blatt 12
 
 ## AdHoc Tasks
