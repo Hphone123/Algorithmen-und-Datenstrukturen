@@ -1,6 +1,7 @@
 package TicketToRide;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -46,9 +47,9 @@ public class TicketToRide {
     // Read files and fill in Nodes and Edges
     BufferedReader reader;
 		try {
-
       // Cities / Nodes
-			reader = new BufferedReader(new FileReader("C:\\Workspace\\Java\\AuD\\Übungen\\Blatt 11\\TicketToRide\\cities.data")); reader.readLine(); String line = reader.readLine();  // The first line msut be discarded
+      String path = new File("cities.data").getAbsolutePath();
+			reader = new BufferedReader(new FileReader(path)); reader.readLine(); String line = reader.readLine();  // The first line msut be discarded
 			while (line != null) {
         String [] city = line.split(" +"); //? One or more Spaces match this expression
         for (int i = 2; i < city.length; i++) {
@@ -61,8 +62,10 @@ public class TicketToRide {
 			}
 			reader.close();
 
+      
       // Connections / Edges
-      reader = new BufferedReader(new FileReader("C:\\Workspace\\Java\\AuD\\Übungen\\Blatt 11\\TicketToRide\\connections.data")); reader.readLine(); line = reader.readLine();
+      path = new File("connections.data").getAbsolutePath();
+      reader = new BufferedReader(new FileReader(path)); reader.readLine(); line = reader.readLine();
 			while (line != null) {
         String [] connection = line.split(", +"); //? Comma and one or more spaces match this expression
         Edge connectionEdge = new Edge(0, 0, connection[1], connection[2], Integer.valueOf(connection[0])); //! Here should be a try-catch for safety, but were sury (for these files) that the first split value is a number!

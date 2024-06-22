@@ -40,7 +40,7 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Topology
   - [x] Dijkstra-Algorithm
   - [x] Prim-MST-Algorithm
-  - [ ] Ticket to Ride (optional task)
+  - [x] Ticket to Ride (optional task)
 - [ ] Blatt 12
 
 ## AdHoc Tasks
