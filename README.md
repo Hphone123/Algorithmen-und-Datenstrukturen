@@ -1,6 +1,10 @@
 # AuD Documentation
 
-This Repo includes all AuD (Algorithmen und Datenstrukturen) assignments and Ad-Hoc tasks from Summer 2024 at the Otto-von-Guericke-Universität (OvGU) Magdeburg.
+This Repo includes AuD (Algorithmen und Datenstrukturen) tasks from Summer 2024 at the Otto-von-Guericke-Universität (OvGU) Magdeburg.
+
+This Repo is very much not complete. If you are missing any specific task, just create a feature request.
+All tasks implemented at tag `Blatt12` / `EndOfSemester` are tested and / or voted, and recieved green smilies / max number of green ticks.
+All tasks implemented afterwards are only locally tested, and can't be guaranteed to work.
 
 ## Important
 
@@ -42,6 +46,11 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Prim-MST-Algorithm
   - [x] Ticket to Ride (optional task)
 - [ ] Blatt 12
+  - [ ] Binomial Coefficients
+  - [ ] Backpack Problem
+  - [ ] Knapsack Class
+  - [ ] Ticket to Ride - DFS (optional task)
+  - [ ] A*-Algorithm (optional task)
 
 ## AdHoc Tasks
 
