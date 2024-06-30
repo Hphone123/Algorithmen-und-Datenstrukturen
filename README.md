@@ -45,11 +45,11 @@ The repo tries to import all libraries installed by maven from "${USER}\\.m2\\re
   - [x] Dijkstra-Algorithm
   - [x] Prim-MST-Algorithm
   - [x] Ticket to Ride (optional task)
-- [ ] Blatt 12
-  - [ ] Binomial Coefficients
-  - [ ] Backpack Problem
-  - [ ] Knapsack Class
-  - [ ] Ticket to Ride - DFS (optional task)
+- [x] Blatt 12
+  - [x] Binomial Coefficients
+  - [x] Backpack Problem
+  - [x] Knapsack Class
+  - [x] Ticket to Ride - DFS (optional task)
   - [ ] A*-Algorithm (optional task)
 
 ## AdHoc Tasks

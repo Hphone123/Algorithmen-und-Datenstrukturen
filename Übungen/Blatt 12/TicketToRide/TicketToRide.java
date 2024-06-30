@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 public class TicketToRide {
   //@formatter:off
   private Matrix adjacencyMatrix = null;
@@ -121,7 +122,7 @@ public class TicketToRide {
    * Converts the data of the boardgame into an adjacency matrix. The entries in
    * the matrix correspond to the length of the connection.
    */
-  final public void createAdjacencyMatrix() {
+  public final void createAdjacencyMatrix() {
     int [][] tempMtrx = new int[nodes.size()][nodes.size()];
     for (Edge edge : edges) {
       tempMtrx[edge.bgn][edge.end] = edge.weight;
@@ -206,22 +207,45 @@ public class TicketToRide {
     return 0;
   }
 
-  // --------------------------------------------------------------- //
+  /*********************************
+   * Blatt 12 Solution Below
+   *********************************/
+
   /**
    * Returns a list with city names, that represent a path between the input
    * cityA and cityB. The path is determined by depth-first-search'.
    */
   public List<String> getPath(String cityA, String cityB) {
-    return null; //? This is here so I can test my Methods
+    String cityC = cityA; // CityCurrent
+    List<String> res = new ArrayList<String>(); res.add(cityC);
+    List<String> vis = new ArrayList<String>(); vis.add(cityC);
+    while (cityC != cityB) {
+      List<String> con = getConnections(cityC);
+      if (con.contains(cityB)) cityC = cityB;
+      else {
+        int sdist = 65000;
+        String cityS = null; //Shortest City
+        for (String string : con) {
+          if ((getConnectionLength(cityC, string) < sdist) || // Distance is Shorter
+              (getConnectionLength(cityC, string) == sdist && // Distance is Equal AND
+               cityToIndex(string) < cityToIndex(cityS))) {   // Index is smaller
+            if (!vis.contains(string)) {                      // City is not visited yet
+              cityS = string; sdist = getConnectionLength(cityC, string);
+            }
+          }
+        }
+        if (cityS == null) {res.remove(cityC); cityC = res.get(res.size() - 1);} // Backtrack one City if no valid connection is available
+        else cityC = cityS;
+      }
+      if (!vis.contains(cityC)) {res.add(cityC); vis.add(cityC);} // Dont add City Twice when Backtracking
+    }
+    return res;
   }
 
   public static void main (String [] args) {
     TicketToRide ttr = new TicketToRide();
 
-    ttr.createAdjacencyMatrix();
-    System.out.println(ttr.cityToIndex("Atlanta"));
-    System.out.println(ttr.indexToCity(13));
-    System.out.println(ttr.getCyclesCount("Boston", 5));
-    System.out.println(ttr.getTotalCyclesCount(6));
+    System.out.println("DFS-Path from Atlanta to Boston: " + ttr.getPath("Atlanta", "Boston").toString());
+    System.out.println("DFS-Path from El Paso to Vancouver: " + ttr.getPath("El Paso", "Vancouver").toString());
   }
 }
